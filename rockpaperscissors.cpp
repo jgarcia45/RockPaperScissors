@@ -3,10 +3,10 @@
 #include <cstdlib>
 #include <string>
 
-void show_winner(char user_move, char comp_move)
-{
-    using namespace std;
+using namespace std;
 
+void show_winner(char user_move, char comp_move) 
+{
     switch (user_move) {
         case 'r':
             switch (comp_move) {
@@ -88,10 +88,7 @@ void show_winner(char user_move, char comp_move)
 
 void countdown()
 {
-    using namespace std;
-
-    // Print countdown, and wait one second after
-    // each statement prints.
+    // Print countdown, and wait one second after each statement prints.
     cout << "Rock..." << endl;
     for (time_t t = time(0) + 1; time(0) < t;) {}
     cout << "Paper..." << endl;
@@ -108,8 +105,7 @@ char get_comp()
     // Seed the RNG
     srand(time(NULL));
 
-    // Divide the random int by 3 and assign its
-    // remainder to a variable.
+    // Divide the random int by 3 and assign its remainder to a variable.
     int c_num = rand() % 3;
 
     // Assign a move to the computer's random number.
@@ -132,8 +128,6 @@ char get_comp()
 
 char get_user()
 {
-    using namespace std;
-
     // Get the user's move
     char move;
     cout << "Enter your move (Rock = r , Paper = p , Scissors = s):" << endl;
@@ -146,8 +140,6 @@ char get_user()
 
 int main()
 {
-    using namespace std;
-
     while (true) {
         // Get the user's move
         char user_move = get_user();
@@ -166,7 +158,7 @@ int main()
         for (time_t t = time(0) + 1; time(0) < t;) {}
 
         /* Prompt the user to play another round.
-         * Any inpput besides "yes", "Yes", "y", or "Y"
+         * Any input besides "yes", "Yes", "y", or "Y"
          * will break out of the main loop. */
         string again;
         cout << endl;
@@ -175,7 +167,6 @@ int main()
         if (again == "Y") {}
         else break;
     }
-
 
     // Main Function Return
     return 0;
