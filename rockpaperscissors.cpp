@@ -5,6 +5,46 @@
 
 using namespace std;
 
+//Prototypes
+void show_winner(char, char);
+void countdown();
+char get_comp();
+char get_user();
+
+int main()
+{
+    while (true) {
+        // Get the user's move
+        char user_move = get_user();
+
+        // Get the computer's move
+        char comp_move = get_comp();
+
+        // Print the countdown dialogue
+        countdown();
+
+        cout << endl;
+
+        // Declare a winner
+        show_winner(user_move, comp_move);
+
+        for (time_t t = time(0) + 1; time(0) < t;) {}
+
+        /* Prompt the user to play another round.
+         * Any input besides "yes", "Yes", "y", or "Y"
+         * will break out of the main loop. */
+        string again;
+        cout << endl << "Enter Y to Play Again" << endl;
+        cin >> again;
+        if (again == "Y") {}
+        else break;
+    }
+
+    // Main Function Return
+    return 0;
+}
+
+//Functions
 void show_winner(char user_move, char comp_move) 
 {
     switch (user_move) {
@@ -136,38 +176,4 @@ char get_user()
 
     // Return the chosen move to the main function
     return move;
-}
-
-int main()
-{
-    while (true) {
-        // Get the user's move
-        char user_move = get_user();
-
-        // Get the computer's move
-        char comp_move = get_comp();
-
-        // Print the countdown dialogue
-        countdown();
-
-        cout << endl;
-
-        // Declare a winner
-        show_winner(user_move, comp_move);
-
-        for (time_t t = time(0) + 1; time(0) < t;) {}
-
-        /* Prompt the user to play another round.
-         * Any input besides "yes", "Yes", "y", or "Y"
-         * will break out of the main loop. */
-        string again;
-        cout << endl;
-        cout << "Enter Y to Play Again" << endl;
-        cin >> again;
-        if (again == "Y") {}
-        else break;
-    }
-
-    // Main Function Return
-    return 0;
 }
